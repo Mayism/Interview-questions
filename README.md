@@ -56,27 +56,27 @@
 优点是兼容性好，简单易用，支持浏览器与服务器双向通信。缺点是只支持GET请求。  
 
 JSONP：json+padding（内填充），顾名思义，就是把JSON填充到一个盒子里  
-(```)
-<script>
-    function createJs(sUrl){
 
-        var oScript = document.createElement('script');
-        oScript.type = 'text/javascript';
-        oScript.src = sUrl;
-        document.getElementsByTagName('head')[0].appendChild(oScript);
-    }
+`<script>`  
+    `function createJs(sUrl){`  
 
-    createJs('jsonp.js');
+        `var oScript = document.createElement('script');`  
+        `oScript.type = 'text/javascript';`  
+        `oScript.src = sUrl;`  
+        `document.getElementsByTagName('head')[0].appendChild(oScript);`  
+    `}`  
 
-    box({
-       'name': 'test'
-    });
+    `createJs('jsonp.js');`  
 
-    function box(json){
-        alert(json.name);
-    }
-</script>
-(```)
+    `box({`  
+       `'name': 'test'`  
+    `});`  
+
+    `function box(json){`  
+        `alert(json.name);`  
+    `}`  
+`</script>`  
+
 
 ### CORS
 
