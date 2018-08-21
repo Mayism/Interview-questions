@@ -64,13 +64,10 @@ JSONP：json+padding（内填充），顾名思义，就是把JSON填充到一�
         `oScript.src = sUrl;`  
         `document.getElementsByTagName('head')[0].appendChild(oScript);`  
     `}`  
-
     `createJs('jsonp.js');`  
-
     `box({`  
        `'name': 'test'`  
     `});`  
-
     `function box(json){`  
         `alert(json.name);`  
     `}`  
