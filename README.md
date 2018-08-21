@@ -170,15 +170,15 @@ Ajax的全称为Asynchronous JavaScript and XML，即为异步的JavaScript和XM
 两个函数在功能上的作用都是：在页面加载的时候去执行这个函数或者动作，但是在如下三个方面有着比较大的区别  
 
 1.执行时间  
-　　`window.onload`必须等到页面内包括图片的所有元素加载完毕后才能执行。   
+　　`window.onload`必须等到页面内包括图片的所有元素加载完毕后才能执行。     
 　　`$(document).ready()`是DOM结构绘制完毕后就执行，不必等到加载完毕。  
 
 2.编写个数不同  
-　　`window.onload`不能同时编写多个，如果有多个window.onload方法，只会执行一个  
+　　`window.onload`不能同时编写多个，如果有多个window.onload方法，只会执行一个   
 　　`$(document).ready()`可以同时编写多个，并且都可以得到执行  
 
 3.简化写法  
-　　`window.onload`没有简化写法   
+　　`window.onload`没有简化写法     
 　　`$(document).ready(function(){})`可以简写成`$(function(){})`  
 
 # 面试公司：触宝科技
