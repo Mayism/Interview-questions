@@ -59,7 +59,6 @@ JSONP：json+padding（内填充），顾名思义，就是把JSON填充到一�
 
 `<script>`  
     `function createJs(sUrl){`  
-
         `var oScript = document.createElement('script');`  
         `oScript.type = 'text/javascript';`  
         `oScript.src = sUrl;`  
@@ -80,17 +79,17 @@ JSONP：json+padding（内填充），顾名思义，就是把JSON填充到一�
 
 ### CORS
 
-服务器端对于CORS的支持，主要就是通过设置Access-Control-Allow-Origin来进行的。如果浏览器检测到相应的设置，就可以允许Ajax进行跨域的访问。  
+服务器端对于CORS的支持，主要就是通过设置`Access-Control-Allow-Origin`来进行的。如果浏览器检测到相应的设置，就可以允许Ajax进行跨域的访问。  
 
-通过修改document.domain来跨子域  
+通过修改`document.domain`来跨子域  
 
-将子域和主域的document.domain设为同一个主域.前提条件：这两个域名必须属于同一个基础域名!而且所用的协议，端口都要一致，否则无法利用document.domain进行跨域  
+将子域和主域的`document.domain`设为同一个主域.前提条件：这两个域名必须属于同一个基础域名!而且所用的协议，端口都要一致，否则无法利用`document.domain`进行跨域  
 
 主域相同的使用`document.domain`
 
 使用`window.name`来进行跨域  
 
-window对象有个name属性，该属性有个特征：即在一个窗口(window)的生命周期内,窗口载入的所有的页面都是共享一个window.name的，每个页面对window.name都有读写的权限，window.name是持久存在一个窗口载入过的所有页面中的  
+window对象有个name属性，该属性有个特征：即在一个窗口(window)的生命周期内,窗口载入的所有的页面都是共享一个`window.name`的，每个页面对`window.name`都有读写的权限，`window.name`是持久存在一个窗口载入过的所有页面中的  
 
 使用HTML5中新引进的`window.postMessage`方法来跨域传送数据  
 
@@ -99,11 +98,11 @@ window对象有个name属性，该属性有个特征：即在一个窗口(window
 # 常见的兼容性问题
 png24位的图片在iE6浏览器上出现背景，解决方案是做成PNG8.也可以引用一段脚本处理.  
 
-浏览器默认的margin和padding不同。解决方案是加一个全局的*{margin:0;padding:0;}来统一。  
+浏览器默认的margin和padding不同。解决方案是加一个全局的`*{margin:0;padding:0;}`来统一。  
 
 IE6双边距bug:块属性标签float后，又有横行的margin情况下，在ie6显示margin比设置的大。  
 
-浮动ie产生的双倍距离（IE6双边距问题：在IE6下，如果对元素设置了浮动，同时又设置了margin-left或margin-right，margin值会加倍。  
+浮动ie产生的双倍距离（IE6双边距问题：在IE6下，如果对元素设置了浮动，同时又设置了`margin-left`或`margin-right`，margin值会加倍。  
 
 `#box{ float:left; width:10px; margin:0 0 0 100px;}`  
 
@@ -117,33 +116,30 @@ _display:inline;将其转化为行内属性。(_这个符号只有ie6会识别)
 
   接着，再次使用“+”将IE8和IE7、IE6分离开来，这样IE8已经独立识别。
 
-  ### css
-(```)
-      .bb{
+css
+      `.bb{`  
 
-       background-color:#f1ee18;/*所有识别*/
+       `background-color:#f1ee18;`/*所有识别*/  
 
-      .background-color:#00deff\9; /*IE6、7、8识别*/
+      `.background-color:#00deff\9;` /*IE6、7、8识别*/  
 
-      +background-color:#a200ff;/*IE6、7识别*/
+      `+background-color:#a200ff;`/*IE6、7识别*/  
 
-      _background-color:#1e0bd1;/*IE6识别*/
-
-      }
-(```)
+      `_background-color:#1e0bd1;`/*IE6识别*/  
+      `}` 
 
 怪异模式问题：漏写DTD声明，Firefox仍然会按照标准模式来解析网页，但在IE中会触发  
 怪异模式。为避免怪异模式给我们带来不必要的麻烦，最好养成书写DTD声明的好习惯。现在  
-可以使用[html5](http://www.w3.org/TR/html5/single-page.html)推荐的写法：`<doctype html>`
+可以使用[html5](http://www.w3.org/TR/html5/single-page.html)
 
 # 面试公司：IBM CDL
 
 # js中三种通知框分别是哪三种
-警告对话框：alert()  
+警告对话框：`alert()`   
 
-确认对话框：confirm()  
+确认对话框：`confirm()`    
 
-提示框：prompt()  
+提示框：`prompt()`    
 
 # js中的事件冒泡机制
 通俗易懂的来讲，事件冒泡就是当一个子元素的事件被触发的时候（如onclick事件），该事件会从事件源（被点击的子元素）开始逐级向上传播，触发父级元素的点击事件。  
